@@ -8,6 +8,17 @@
 // Підказка: prompt завжди повертає рядок (String), тому перед перевіркою
 // перетворіть значення на число за допомогою Number().
 
+// const number = prompt('Введіть число');
+//let number = Number(prompt('Введіть число'));
+//if (number === 10) {
+// alert('Вірно');
+//} else {
+// alert('Невірно');
+//}
+// alternative завдання 1
+//const result = Number(prompt('Введіть число')) === 10 ? 'Вірно' : 'Невірно';
+//alert(result);
+
 // Завдання 2:
 // У змінній min лежить випадкове число від 0 до 59.
 // Визначте, в яку чверть години потрапляє
@@ -16,6 +27,18 @@
 // "10 входить в першу чверть"
 
 // const min = Math.floor(Math.random() * (59 - 0) + 0);
+// const min = Math.floor(Math.random() * 60);
+// console.log(`Число: ${min}`);
+
+// if (min >= 0 && min <= 14) {
+//   alert(`${min} входить у першу чверть`);
+// } else if (min >= 15 && min <= 29) {
+//   alert(`${min} входить у другу чверть`);
+// } else if (min >= 30 && min <= 44) {
+//   alert(`${min} входить у третю чверть`);
+// } else if (min >= 45 && min <= 59) {
+//   alert(`${min} входить у четверту чверть`);
+// }
 
 // Завдання 3:
 // Змінна num може набувати 4 значення: '1', '2', '3' або '4'
@@ -28,12 +51,43 @@
 // "Вибачте, але ви маєте ввести значення від 1 до 4 включно".
 // Значення змінної result виведіть в консоль.
 
+// let season = prompt('Введіть число від 1 до 4');
+// console.log(`Число: ${season}`);
+
+// let message = '';
+// switch (season) {
+//   case '1':
+//     message = 'Зима';
+//     break;
+//   case '2':
+//     message = 'Весна';
+//     break;
+//   case '3':
+//     message = 'Літо';
+//     break;
+//   case '4':
+//     message = 'Осінь';
+//     break;
+//   default:
+//     message = 'Вибачте, але ви маєте ввести значення від 1 до 4 включно';
+// }
+// alert(message);
+
 // Завдання 4:
 // Отримуйте від користувача число (кількість хвилин) через prompt
 // і виводьте у консоль рядок у форматі годин та хвилин.
 // Приклад: користувач вводить в prompt '70' -> в консолі відобразиться '01:10'.
 // Корисне посилання для відображення годин та хвилин у потрібному форматі ('01' замість '1'):
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart#examples
+
+let minutes = Number(prompt('Введіть кількість хвилин'));
+let hours = Math.floor(minutes / 60);
+let minutesLeft = minutes % 60;
+const formattedHours = String(hours).padStart(2, '0');
+const formattedMinutes = String(minutes).padStart(2, '0');
+let formattedTime = `${formattedHours}:${formattedMinutes}`;
+
+alert(`Кількість годин: ${hours}`);
 
 // Завдання 5:
 // Напишіть код, який запитуватиме у користувача
