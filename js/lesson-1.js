@@ -80,14 +80,18 @@
 // Корисне посилання для відображення годин та хвилин у потрібному форматі ('01' замість '1'):
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart#examples
 
-let minutes = Number(prompt('Введіть кількість хвилин'));
-let hours = Math.floor(minutes / 60);
-let minutesLeft = minutes % 60;
-const formattedHours = String(hours).padStart(2, '0');
-const formattedMinutes = String(minutes).padStart(2, '0');
-let formattedTime = `${formattedHours}:${formattedMinutes}`;
+// let totalMinutes = Number(prompt('Введіть кількість хвилин'));
 
-alert(`Кількість годин: ${hours}`);
+// function formattedTime(totalMinutes) {
+//   const hours = Math.floor(totalMinutes / 60);
+//   const minutes = totalMinutes % 60;
+
+//   const formattedHours = String(hours).padStart(2, '0');
+//   const formattedMinutes = String(minutes).padStart(2, '0');
+//   return `${formattedHours}:${formattedMinutes}`;
+// }
+
+// alert(formattedTime(totalMinutes));
 
 // Завдання 5:
 // Напишіть код, який запитуватиме у користувача
@@ -105,9 +109,32 @@ alert(`Кількість годин: ${hours}`);
 // то вивести в alert рядок "Добрий день!",
 // в іншому випадку вивести в alert рядок "Невірний пароль!"
 
+// let login = prompt('Введіть логін');
+// console.log(`Логін: ${login}`);
+
+// if (login === 'Адмін') {
+//   let password = prompt('Введіть пароль');
+
+//   if (password === null || password === '') {
+//     alert('Скасовано');
+//   } else if (password === 'Я головний') {
+//     alert('Добрий день!');
+//   } else {
+//     alert('Невірний пароль!');
+//   }
+// } else if (login === null || login === '') {
+//   alert('Скасовано');
+// } else {
+//   alert('Я вас не знаю');
+// }
+
 // Завдання 6:
 // Використайте цикл while, щоб вивести в console всі числа від 0 до 20 включно.
-
+// let i = 0;
+// while (i < 21) {
+//   console.log(i);
+//   i += 1;
+// }
 // Завдання 7:
 // Напишіть функцію getNumbers(min, max), що приймає 2 параметри -
 // мінімальне і максимальне число відповідно.
@@ -116,10 +143,38 @@ alert(`Кількість годин: ${hours}`);
 // Окрім цього, підрахуйте суму всіх парних чисел в цьому циклі
 // і поверніть її з функції.
 
+// function getNumbers(min, max) {
+//   let sum = 0;
+
+//   for (let i = max; i >= min; i--) {
+//     console.log(i);
+//     if (i % 2 === 0) {
+//       sum += i;
+//     }
+//   }
+//   return sum;
+// }
+// const result = getNumbers(1, 10);
+// console.log(`Сума парних чисел: ${result}`);
+
 // Завдання 8:
 // Напишіть функцію min(a, b), яка приймає 2 числа і повертає меньше з них.
 // Потрібно додати перевірку, що функція отримує саме числа, в іншому випадку
 // повертати з функції рядок - 'Not a number!'.
+
+// function min(a, b) {
+//   if (typeof a === 'number' && typeof b === 'number') {
+//   } else {
+//     return 'Not a number!';
+//   }
+//   if (a < b) {
+//     return a;
+//   } else {
+//     return b;
+//   }
+// }
+// console.log(min(10, 20));
+// console.log(min('hello', 35));
 
 // Завдання 9:
 // Напишіть функцію isAdult(age), яка  приймає число - вік користувача і повертає true,
@@ -127,8 +182,31 @@ alert(`Кількість годин: ${hours}`);
 // В іншому випадку вона запитує підтвердження через confirm
 // і повертає його результат (true/false).
 
+// function isAdult(age) {
+//   if (age >= 18) {
+//     return true;
+//   } else if (age < 18) {
+//     return confirm('Вам є 18 років?');
+//   }
+// }
+// console.log(isAdult(16));
+
 // Завдання 10:
 // Напишіть функцію fizzBuzz(num), яка приймає число і перевіряє кожне число від 1 до num:
 // Якщо число ділитися  без остачі на 3 - виводить в консоль 'fizz',
 // якщо ділиться  без остачі на 5 - виводить в консоль 'buzz',
 // якщо ділиться  без остачі і на 3, і на 5 - виводить в консоль 'fizzbuzz'.
+function fizzBuzz(num) {}
+for (let i = 1; i <= num; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log('fizzbuzz');
+  }
+  if (i % 3 === 0) {
+    console.log('fizz');
+  }
+  if (i % 5 === 0) {
+    console.log('buzz');
+  } else {
+    console.log(i);
+  }
+}
